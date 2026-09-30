@@ -181,22 +181,27 @@ body:not(.locked) .themetoggle{display:none}
     <h3 style="font-size:17px;margin:0 0 4px">1단계. Aside 설치하고 Claude 연결하기</h3>
     <ol class="steps">
       <li>아래 버튼을 눌러 Aside를 받아 설치해요. (맥·윈도우 모두 있어요)</li>
-      <li>Aside를 열고 <b>설정</b>에서 AI를 <b>Claude</b>로 고른 뒤, 내 Claude Pro 계정으로 연결해요.</li>
+      <li>Aside를 열고 <b>Settings → Models</b>에서 <b>Connect</b>를 눌러 내 Claude Pro 계정을 연결해요.</li>
+      <li>새 채팅(New Chat) 입력창 아래에서 두 가지를 꼭 바꿔요.<br>
+        · 왼쪽 <b>“Skip confirmation” → “Ask first”</b> (발행 전에 원장님께 물어보게 하는 설정)<br>
+        · 오른쪽 모델을 <b>Claude Sonnet</b>으로</li>
     </ol>
+    <div class="note">⚠️ <b>“Skip confirmation”이 켜져 있으면 확인 없이 바로 발행돼요.</b> 꼭 “Ask first”로 바꿔 두세요.</div>
     <div class="btnrow"><a class="btn ghost" href="https://aside.com/" target="_blank" rel="noopener">Aside 다운로드 ↗</a></div>
     <div class="warn">메뉴 이름은 업데이트로 조금 바뀔 수 있어요. 안 보이면 Aside 채팅창에 “Claude 구독 연결하는 방법 알려줘”라고 물어보세요.</div>
 
     <div class="divider"></div>
     <h3 style="font-size:17px;margin:0 0 4px">2단계. 계정 3개에 한 번씩 로그인하기</h3>
     <ul class="check">
-      <li>Aside 브라우저로 <b>네이버</b>, <b>인스타그램</b>, <b>스레드</b>에 한 번씩 로그인해요.</li>
+      <li>Aside 브라우저로 <b>네이버</b>, <b>인스타그램</b>, <b>스레드</b>에 한 번씩 로그인해요. 네이버는 <b>“로그인 상태 유지”</b>를 체크하세요. (로그인이 안 돼 있으면 AI가 글쓰기 화면에서 멈춰요)</li>
       <li>비밀번호는 <b>Aside 비밀번호 관리자</b>에 저장하세요. AI는 비밀번호를 보지 못하고, 자동입력으로만 로그인해요.</li>
       <li>채팅창에 비밀번호를 직접 적지 마세요.</li>
     </ul>
 
     <div class="divider"></div>
     <h3 style="font-size:17px;margin:0 0 4px">3단계. 아래 프롬프트 붙여넣기</h3>
-    <p class="lead" style="margin-bottom:8px">아래 상자를 눌러 복사하고, Aside 채팅창에 붙여넣으세요. <b>[내 정보]</b> 칸만 원장님 것으로 채우면 돼요.</p>
+    <p class="lead" style="margin-bottom:8px">아래 상자를 눌러 복사하고, Aside 채팅창에 붙여넣으세요. <b>[내 정보]</b> 칸만 원장님 것으로 채우면 돼요. 붙여넣으면 줄 앞에 “-”가 자동으로 붙기도 하는데, 그대로 보내도 괜찮아요.</p>
+    <p class="lead" style="margin-bottom:8px">실제로 해보니 <b>글감 찾기 1분, 초안 2분, 에디터 입력·사진·비공개 확인까지 약 8분</b> 걸렸어요. 발행 직전에 “Review” 알림이 뜨면 눌러서 내용을 보고 <b>Confirm</b>을 누르면 돼요.</p>
     <button class="big-copy" id="asideBox"><span class="lbl">전체 복사</span><pre id="asideText">너는 지금부터 내 네이버 블로그·인스타그램·스레드를 맡은 마케터야.
 이 브라우저에 로그인된 내 계정으로, 아래 순서대로 오늘 글 1개를 만들어서 올려줘.
 
