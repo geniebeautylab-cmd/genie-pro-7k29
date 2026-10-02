@@ -149,40 +149,63 @@ body:not(.locked) .themetoggle{display:none}
     <p>네이버 블로그 + 인스타그램 카드뉴스 + 스레드까지 <span class="hl">3채널 자동 발행</span>, 그리고 8년차 원장이 실제로 쓰는 <b>글쓰기·마케팅 스킬 10종</b>을 통째로 드립니다.<br>“이 스킬들을 클론해서 세팅해줘” 한 줄이면 내 실력이 그대로 장착됩니다.</p>
     <div class="kicker">— 지니뷰티랩 네일 아카데미</div>
     <div class="toc">
-      <a href="#aside">🔰 쉬운 버전(Aside)</a>
-      <a href="#setup">① 기본 세팅</a>
-      <a href="#pack">⭐ 스킬 팩</a>
-      <a href="#prompt">마스터 프롬프트</a>
+      <a href="#setup">1 기본 세팅</a>
+      <a href="#aside">2 Aside 설치</a>
+      <a href="#pack">3 스킬 팩</a>
+      <a href="#link">4 Aside 연결</a>
+      <a href="#prompt">5 프롬프트</a>
       <a href="#catalog">스킬 10종</a>
       <a href="#faq">문제해결</a>
     </div>
   </header>
 
-  <!-- ===== TRACK CHOOSER ===== -->
+  <!-- ===== OVERVIEW ===== -->
   <section class="card">
-    <h2>어떤 방법으로 할까요?</h2>
-    <p class="lead">두 가지 방법이 있어요. 컴퓨터가 낯설다면 <b>쉬운 버전</b>부터 시작하세요.</p>
-    <div class="tracks">
-      <a class="track easy" href="#aside">
-        <span class="t-tag">🔰 쉬운 버전 · 추천</span>
-        <h3>Aside 브라우저로 하기</h3>
-        <p>설치할 건 브라우저 하나뿐이에요.<br>코딩 없이 말로 시키면 AI가 글을 쓰고 올려요.<br>발행 직전에 원장님이 확인 버튼만 눌러요.</p>
-      </a>
-      <a class="track pro" href="#setup">
-        <span class="t-tag">🛠 고급 버전</span>
-        <h3>Claude Code로 프로그램 만들기</h3>
-        <p>git·Node.js를 설치하고 나만의 자동화 앱을 만들어요.<br>대시보드와 예약 발행까지 직접 다듬고 싶은 분께 맞아요.</p>
-      </a>
+    <h2>이렇게 진행해요</h2>
+    <p class="lead"><b>Claude Code</b>가 글쓰기부터 올리기까지 다 해요. 화면을 누르는 일만 <b>Aside 브라우저</b>가 맡아요. 아래 순서대로 따라 하세요.</p>
+    <ol class="steps">
+      <li><a href="#setup">기본 세팅</a>: Claude Code, git, Node.js</li>
+      <li><a href="#aside">Aside 설치하고 로그인하기</a></li>
+      <li><a href="#pack">원장 스킬 팩 받기</a></li>
+      <li><a href="#link">Claude Code와 Aside 이어 주기</a></li>
+      <li><a href="#prompt">프롬프트 붙여넣고 첫 글 올리기</a></li>
+    </ol>
+  </section>
+
+  <!-- ===== SETUP ===== -->
+  <section class="card" id="setup">
+    <h2><span class="stepnum plum">1</span> 기본 세팅</h2>
+    <p class="lead">먼저 컴퓨터에 세 가지를 준비해요. <b>①번부터</b> 순서대로 하세요.</p>
+    <div class="plat" role="tablist">
+      <button id="btnMac" class="on" onclick="setOS('mac')">🍎 맥 (Mac)</button>
+      <button id="btnWin" onclick="setOS('win')">🪟 윈도우</button>
     </div>
+    <div class="divider"></div>
+    <h3 style="font-size:17px;margin:0 0 4px">① Claude Pro 가입 &amp; Claude Code 열기 <span style="font-size:13px;color:var(--muted)">(제일 먼저!)</span></h3>
+    <p class="lead">AI(Claude)가 글을 쓰고 일을 다 해요. 먼저 <b>Pro 요금제</b>에 가입하세요. (API 키 필요 없어요)</p>
+    <div class="btnrow"><a class="btn ghost" href="https://www.claude.com/pricing" target="_blank" rel="noopener">Claude Pro 구독하러 가기 ↗</a></div>
+    <p class="lead" style="margin-top:10px">가입 후, Claude 앱(또는 claude.ai) <b>우측 상단의 <code>&lt;/&gt;</code> (코드) 아이콘을 클릭</b>하면 <b>Claude Code</b> 창이 열려요. 이 창이 앞으로 모든 작업의 무대예요.</p>
+    <div class="note">💡 <code>&lt;/&gt;</code> 아이콘이 안 보이면 → Claude 데스크톱 앱을 최신으로 업데이트하거나 claude.ai 에 로그인해 보세요.</div>
+    <div class="divider"></div>
+    <h3 style="font-size:17px;margin:0 0 4px">② 깃허브(git) 설치</h3>
+    <p class="lead" style="margin-bottom:6px">스킬을 받아오려면 <b>git</b>이 필요해요.</p>
+    <p class="lead mac" style="margin:0 0 6px">🍎 <b>맥</b>: Claude가 git을 처음 쓸 때 <b>'명령어 도구 설치' 팝업</b>이 자동으로 떠요 → <b>"설치"</b>만 누르면 끝! (안 뜨면 아래 버튼으로)</p>
+    <p class="lead win" style="margin:0 0 6px">🪟 <b>윈도우</b>: 자동으로 안 떠요. 아래 <b>Git for Windows</b>를 받아 설치하세요.</p>
+    <div class="btnrow"><a class="btn ghost" href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 설치 페이지 ↗</a></div>
+    <div class="divider"></div>
+    <h3 style="font-size:17px;margin:0 0 4px">③ Node.js 설치</h3>
+    <p class="lead">인스타 <b>카드뉴스 이미지</b>를 만들 때 <b>Node.js</b>가 필요해요. LTS 버전으로 설치해두세요.</p>
+    <div class="btnrow"><a class="btn ghost" href="https://nodejs.org/ko/download" target="_blank" rel="noopener">Node.js 다운로드 ↗</a></div>
+    <div class="code"><button class="copy" data-copy="node -v">복사</button>node -v</div>
   </section>
 
   <!-- ===== EASY: ASIDE ===== -->
   <section class="card" id="aside" style="border:2px solid var(--ok)">
-    <h2><span class="stepnum ok">🔰</span> 쉬운 버전: Aside로 코딩 없이</h2>
-    <p class="lead">Aside는 <b>AI가 들어 있는 인터넷 브라우저</b>예요. 크롬처럼 쓰면서 “블로그 글 써서 올려줘”라고 말하면, AI가 화면을 보고 직접 글을 쓰고 올려요. 이미 쓰고 있는 <b>Claude 구독을 그대로 연결</b>해서 써요.</p>
+    <h2><span class="stepnum ok">2</span> Aside 설치하고 로그인하기</h2>
+    <p class="lead">Aside는 <b>AI가 들어 있는 인터넷 브라우저</b>예요. Claude Code가 글을 쓰면, Aside가 화면을 직접 눌러서 블로그·인스타·스레드에 올려요. <b>크롬 확장은 쓰지 않아요.</b></p>
 
     <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">1단계. Aside 설치하고 Claude 연결하기</h3>
+    <h3 style="font-size:17px;margin:0 0 4px">Aside 설치하고 Claude 연결하기</h3>
     <p class="lead" style="margin-bottom:8px">아래 사진은 실제 Aside 화면이에요. <b>빨간 네모</b>만 따라 누르면 돼요.</p>
 
     <h4 class="substep">① Aside 내려받기</h4>
@@ -218,19 +241,45 @@ body:not(.locked) .themetoggle{display:none}
     <div class="warn">메뉴 이름은 업데이트로 조금 바뀔 수 있어요. 안 보이면 Aside 채팅창에 “Claude 구독 연결하는 방법 알려줘”라고 물어보세요.</div>
 
     <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">2단계. 계정 3개에 한 번씩 로그인하기</h3>
+    <h3 style="font-size:17px;margin:0 0 4px">계정 3개에 한 번씩 로그인하기</h3>
     <ul class="check">
       <li>Aside 브라우저로 <b>네이버</b>, <b>인스타그램</b>, <b>스레드</b>에 한 번씩 로그인해요. 네이버는 <b>“로그인 상태 유지”</b>를 체크하세요. (로그인이 안 돼 있으면 AI가 글쓰기 화면에서 멈춰요)</li>
       <li>비밀번호는 <b>Aside 비밀번호 관리자</b>에 저장하세요. AI는 비밀번호를 보지 못하고, 자동입력으로만 로그인해요.</li>
       <li>채팅창에 비밀번호를 직접 적지 마세요.</li>
     </ul>
 
+    <div class="note">💡 <b>알아두세요</b><br>
+      · 로그인은 꼭 <b>Aside 안에서</b> 해요. 크롬에 로그인돼 있어도 Aside는 그걸 못 써요.<br>
+      · 글을 올리는 동안 컴퓨터와 Aside는 켜 두세요.</div>
+  </section>
+
+  <!-- ===== STAR: SKILL PACK ===== -->
+  <section class="card" id="pack" style="border:2px solid var(--plum)">
+    <h2><span class="stepnum plum">3</span> 원장 스킬 팩 <span style="font-size:14px;font-weight:400;color:var(--muted)">(Claude에게 맡기기)</span></h2>
+    <p class="lead">유료판의 핵심 — 네이버 블로그 글쓰기·마케팅 카피·랜딩페이지·기획·팀 자동화까지, 원장이 실제로 쓰는 <b>스킬 10종</b>이에요.</p>
+    <p class="lead" style="margin:0 0 8px"><b>Claude Code를 열고, 아래 문장을 그대로 복사해서 붙여넣으세요.</b> Claude가 스킬을 받아 <code>~/.claude/skills/</code> 에 세팅까지 알아서 해줘요.</p>
+    <div class="code"><button class="copy" id="cloneCopy" data-copy="">복사</button><span id="cloneText">🔒 비밀번호 입력 후 여기에 표시됩니다</span></div>
     <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">3단계. 아래 프롬프트 붙여넣기</h3>
-    <p class="lead" style="margin-bottom:8px">아래 상자를 눌러 복사하고, Aside 채팅창에 붙여넣으세요. <b>[내 정보]</b> 칸만 원장님 것으로 채우면 돼요. 붙여넣으면 줄 앞에 “-”가 자동으로 붙기도 하는데, 그대로 보내도 괜찮아요.</p>
-    <p class="lead" style="margin-bottom:8px">실제로 해보니 <b>글감 찾기 1분, 초안 2분, 에디터 입력·사진·비공개 확인까지 약 8분</b> 걸렸어요. 발행 직전에 “Review” 알림이 뜨면 눌러서 내용을 보고 <b>Confirm</b>을 누르면 돼요.</p>
-    <button class="big-copy" id="asideBox"><span class="lbl">전체 복사</span><pre id="asideText">너는 지금부터 내 네이버 블로그·인스타그램·스레드를 맡은 마케터야.
-이 브라우저에 로그인된 내 계정으로, 아래 순서대로 오늘 글 1개를 만들어서 올려줘.
+    <div class="note" style="border:1px dashed var(--plum);background:var(--rose-soft)">📌 세팅이 끝나면, 앞으로 <b>“블로그 글 써줘”</b> 같은 요청에 이 스킬들이 <b>자동으로 적용</b>돼요 (예: naver-blog-writing 스킬 발동). 따로 켤 필요 없어요.</div>
+  </section>
+
+  <!-- ===== LINK CLAUDE CODE + ASIDE ===== -->
+  <section class="card" id="link">
+    <h2><span class="stepnum ok">4</span> Claude Code와 Aside 이어 주기</h2>
+    <p class="lead">이 단계를 해야 Claude Code가 Aside를 부를 수 있어요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
+    <button class="big-copy" id="linkBox"><span class="lbl">전체 복사</span><pre id="linkText">Aside 명령어 도구(CLI)가 없으면 설치해줘.
+그다음 터미널에서 aside skills install --target claude-code 를 실행해서 Aside 브라우저를 연결해줘.
+앞으로 브라우저가 필요한 일은 크롬 확장 말고 Aside로 해줘.</pre></button>
+    <p class="lead" style="margin-top:12px">중간에 “설치해도 될까요?” 하고 물으면 허용을 눌러요. 한 번만 하면 돼요.</p>
+  </section>
+
+  <!-- ===== MASTER PROMPT ===== -->
+  <section class="card" id="prompt">
+    <h2><span class="stepnum">5</span> 프롬프트 붙여넣고 첫 글 올리기</h2>
+    <p class="lead">아래 상자를 눌러 복사하고 <b>Claude Code</b>에 붙여넣으세요. <b>[내 정보]</b> 칸만 원장님 것으로 채우면 돼요.</p>
+    <button class="big-copy" id="promptBox"><span class="lbl">전체 복사</span><pre id="promptText">너는 지금부터 내 네이버 블로그·인스타그램·스레드를 맡은 마케터야.
+글쓰기와 이미지 만들기는 네가 직접 하고, 화면을 눌러서 올리는 일만 Aside 브라우저로 해. 크롬 확장은 쓰지 마.
+아래 순서대로 오늘 글 1개를 만들어서 올려줘.
 
 [내 정보] ← 처음 한 번만 채우기
 - 네이버 블로그 주소:
@@ -244,33 +293,33 @@ body:not(.locked) .themetoggle{display:none}
 
 [오늘 할 일]
 1. 글감 찾기
-   - 네이버에서 내 키워드로 검색하고, 상위 블로그 3~5개의 제목과 구성을 살펴봐.
+   - 네이버에서 내 키워드로 검색해서, 상위 블로그 3~5개의 제목과 구성을 살펴봐.
    - 그 글들이 시원하게 답하지 못한 궁금증 하나를 오늘 주제로 골라.
    - 주제 1개와 제목 후보 3개를 먼저 보여주고, 내가 고르면 다음 단계로 가.
 2. 네이버 블로그 글 쓰기 (원본)
-   - 구조: 공감 한 줄 → 결론 먼저 → 이유 → 실제 예시 → 결론 다시 → CTA.
+   - naver-blog-writing 스킬을 써.
    - 소제목 3~5개, 공백 제외 1,500자 이상.
    - 초안을 먼저 보여주고, 내가 좋다고 하면 발행 단계로 가.
-3. 네이버 블로그 발행
-   - 블로그 글쓰기 화면(스마트에디터)에 제목·본문·사진을 넣어.
-   - 공개범위를 [내 정보]대로 선택하고, 실제로 선택됐는지 눈으로 다시 확인해.
+3. 네이버 블로그 발행 (Aside)
+   - Aside로 블로그 글쓰기 화면(스마트에디터)에 제목·본문·사진을 넣어.
+   - 공개범위를 [내 정보]대로 선택하고, 실제로 선택됐는지 화면에서 다시 확인해.
    - 발행 버튼을 누르기 직전에 나에게 확인받아.
 4. 인스타그램 카드뉴스
-   - 발행된 블로그 글에서 핵심만 뽑아 표지 1장 + 내용 3~7장으로 정리해.
-   - 캔바(canva.com)나 미리캔버스에서 카드 이미지로 만들어 저장해.
+   - marketing-science-writing 스킬로, 발행된 블로그 글에서 핵심만 뽑아 표지 1장 + 내용 3~7장으로 정리해.
+   - 카드 이미지는 네가 직접 만들어. Node.js로 HTML을 1080x1350 이미지로 저장해. 한 번 만든 디자인 틀은 폴더에 저장해 두고 다음에도 같은 디자인을 써.
    - 표지에만 후킹 문구를 넣고, 내용 장에는 1장에 정보 1개씩.
    - 캡션 끝에 "자세한 내용은 블로그에서" + 블로그 링크 안내를 넣어.
-   - 인스타그램 웹에서 새 게시물로 올리기 직전에 나에게 확인받아.
+   - 만든 이미지를 나에게 먼저 보여주고, Aside로 인스타그램에 올리기 직전에 확인받아.
 5. 스레드
    - 같은 블로그 글을 대화하듯 짧게 3~5개 글타래로 바꿔.
-   - 마지막 글에 블로그 링크를 넣고, 올리기 직전에 나에게 확인받아.
+   - 마지막 글에 블로그 링크를 넣고, Aside로 올리기 직전에 나에게 확인받아.
 6. 끝나면 발행된 링크 3개(블로그·인스타·스레드)를 정리해서 알려줘.
 
 [꼭 지킬 품질 규칙]
 1. 블로그 본문 글자 크기는 전부 15pt로 통일해.
 2. 한 문장은 한 줄로. 모바일에서 단어가 잘리지 않게 18자 안팎에서 띄어쓰기 기준으로 줄을 바꿔.
 3. '\n' 같은 글자가 본문에 찍히면 안 돼. 줄바꿈은 진짜 줄바꿈으로.
-4. 사진은 절대 중복 금지. 이 글 안에서도, 예전 글과도 같은 사진을 다시 쓰지 마. 쓴 사진은 기억해 둬.
+4. 사진은 절대 중복 금지. 이 글 안에서도, 예전 글과도 같은 사진을 다시 쓰지 마. 쓴 사진은 파일로 기록해 둬.
 5. 첫 소제목 앞에는 인용구 블록을 쓰지 마. 맨 앞 공감 문장은 일반 본문으로.
 6. 출처 표기(— 뉴스, 논문 등)는 붙이지 마.
 7. 인스타·스레드는 블로그 글을 복사해 붙이지 말고, 각 채널에 맞게 짧게 다시 써.
@@ -279,115 +328,17 @@ body:not(.locked) .themetoggle{display:none}
 
 [하지 말 것]
 - 나에게 확인받기 전에 발행 버튼 누르기.
-- 채팅창에 비밀번호 물어보기. 로그인은 저장된 자동입력으로만 해.
+- 비밀번호 물어보기. 로그인이 풀려 있으면 멈추고 나에게 Aside에서 직접 로그인해 달라고 말해.
 - 로그인이 풀린 채널이 있으면 그 채널만 건너뛰고, 나머지는 계속 진행한 뒤 알려줘.</pre></button>
 
     <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">4단계. 첫 글은 비공개로 테스트</h3>
+    <h3 style="font-size:17px;margin:0 0 4px">첫 글은 비공개로 테스트</h3>
     <ul class="check">
       <li>처음엔 공개범위를 <b>비공개</b>로 두고 한 번 끝까지 해보세요.</li>
       <li>글자 크기, 줄바꿈, 사진이 괜찮은지 직접 확인해요.</li>
       <li>괜찮으면 [내 정보]의 공개범위를 <b>전체공개</b>로 바꿔요.</li>
     </ul>
-
-    <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">5단계. 매일 반복하기</h3>
-    <p class="lead">잘 되면 이 작업을 <b>“매일 오전 9시에 반복해줘”</b>라고 부탁해서 반복 작업으로 저장하세요. 다음부터는 AI가 글을 다 준비해 두고, 원장님은 <b>확인 버튼만</b> 누르면 돼요.</p>
-    <div class="note">💡 <b>알아두세요</b><br>
-      · Aside는 글 올리기처럼 중요한 일은 <b>원장님 확인을 받고</b> 진행해요. 공개범위 사고를 막아주는 안전장치예요.<br>
-      · 컴퓨터가 켜져 있어야 작업해요.<br>
-      · 원장 스킬 팩은 Claude Code용이에요. Aside에서는 위 프롬프트에 핵심 규칙을 담아 두었어요.</div>
-  </section>
-
-  <!-- ===== SETUP ===== -->
-  <section class="card" id="setup">
-    <h2><span class="stepnum plum">🛠</span> 고급 버전: 자동화 기본 세팅</h2>
-    <p class="lead">스킬을 살리려면 먼저 자동화 앱이 돌아가야 해요. <b>①번부터</b> 순서대로 준비하세요.</p>
-    <div class="plat" role="tablist">
-      <button id="btnMac" class="on" onclick="setOS('mac')">🍎 맥 (Mac)</button>
-      <button id="btnWin" onclick="setOS('win')">🪟 윈도우</button>
-    </div>
-    <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">① Claude Pro 가입 &amp; Claude Code 열기 <span style="font-size:13px;color:var(--muted)">(제일 먼저!)</span></h3>
-    <p class="lead">AI(Claude)가 프로그램을 만들고 매일 글을 써요. 먼저 <b>Pro 요금제</b>에 가입하세요. (API 키 필요 없어요)</p>
-    <div class="btnrow"><a class="btn ghost" href="https://www.claude.com/pricing" target="_blank" rel="noopener">Claude Pro 구독하러 가기 ↗</a></div>
-    <p class="lead" style="margin-top:10px">가입 후, Claude 앱(또는 claude.ai) <b>우측 상단의 <code>&lt;/&gt;</code> (코드) 아이콘을 클릭</b>하면 <b>Claude Code</b> 창이 열려요. 이 창이 앞으로 모든 작업의 무대예요.</p>
-    <div class="note">💡 <code>&lt;/&gt;</code> 아이콘이 안 보이면 → Claude 데스크톱 앱을 최신으로 업데이트하거나 claude.ai 에 로그인해 보세요.</div>
-    <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">② 깃허브(git) 설치</h3>
-    <p class="lead" style="margin-bottom:6px">스킬을 받아오려면 <b>git</b>이 필요해요.</p>
-    <p class="lead mac" style="margin:0 0 6px">🍎 <b>맥</b>: Claude가 git을 처음 쓸 때 <b>'명령어 도구 설치' 팝업</b>이 자동으로 떠요 → <b>"설치"</b>만 누르면 끝! (안 뜨면 아래 버튼으로)</p>
-    <p class="lead win" style="margin:0 0 6px">🪟 <b>윈도우</b>: 자동으로 안 떠요. 아래 <b>Git for Windows</b>를 받아 설치하세요.</p>
-    <div class="btnrow"><a class="btn ghost" href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 설치 페이지 ↗</a></div>
-    <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">③ Node.js 설치</h3>
-    <p class="lead">원장님이 만들 자동화 앱이 <b>Node.js</b>로 돌아가요. LTS 버전으로 설치해두세요.</p>
-    <div class="btnrow"><a class="btn ghost" href="https://nodejs.org/ko/download" target="_blank" rel="noopener">Node.js 다운로드 ↗</a></div>
-    <div class="code"><button class="copy" data-copy="node -v">복사</button>node -v</div>
-  </section>
-
-  <!-- ===== STAR: SKILL PACK ===== -->
-  <section class="card" id="pack" style="border:2px solid var(--plum)">
-    <h2><span class="stepnum plum">★</span> 원장 스킬 팩 <span style="font-size:14px;font-weight:400;color:var(--muted)">(Claude에게 맡기기)</span></h2>
-    <p class="lead">유료판의 핵심 — 네이버 블로그 글쓰기·마케팅 카피·랜딩페이지·기획·팀 자동화까지, 원장이 실제로 쓰는 <b>스킬 10종</b>이에요.</p>
-    <p class="lead" style="margin:0 0 8px"><b>Claude Code를 열고, 아래 문장을 그대로 복사해서 붙여넣으세요.</b> Claude가 스킬을 받아 <code>~/.claude/skills/</code> 에 세팅까지 알아서 해줘요.</p>
-    <div class="code"><button class="copy" id="cloneCopy" data-copy="">복사</button><span id="cloneText">🔒 비밀번호 입력 후 여기에 표시됩니다</span></div>
-    <div class="divider"></div>
-    <div class="note" style="border:1px dashed var(--plum);background:var(--rose-soft)">📌 세팅이 끝나면, 앞으로 <b>“블로그 글 써줘”</b> 같은 요청에 이 스킬들이 <b>자동으로 적용</b>돼요 (예: naver-blog-writing 스킬 발동). 따로 켤 필요 없어요.</div>
-  </section>
-
-  <!-- ===== MASTER PROMPT ===== -->
-  <section class="card" id="prompt">
-    <h2>마스터 프롬프트 (개선판)</h2>
-    <p class="lead">코드를 내려받지 않습니다. 아래 프롬프트를 <b>Claude Code 계획모드</b>(창에서 Shift+Tab)에 붙여넣으면 AI가 자동화 프로그램 전체를 만들어 줍니다. 이번에 겪은 버그(글자크기·₩n·사진중복·공개범위 사고)를 미리 막는 품질 스펙 포함.</p>
-    <button class="big-copy" id="promptBox"><span class="lbl">전체 복사</span><pre id="promptText">너는 지금부터 "네이버 블로그 + 인스타그램 + 스레드(Threads) 자동 발행 프로그램"을 내 노트북에 처음부터 만들어주는 개발자야. 아래 요구사항대로 계획을 세우고, 내가 승인하면 코드를 작성하고 실행해줘.
-
-[무엇을 만드는가]
-- 매일 정해진 시간에 내 관심 주제로 (1) 네이버 블로그 글을 먼저 자동 생성·발행하고, 그 발행된 블로그 글을 원본 삼아 (2) 인스타그램 카드뉴스와 (3) 스레드(Threads) 글로 재가공해서 발행하는 프로그램.
-- 핵심: 세 개의 다른 글을 새로 쓰는 게 아니라, "네이버 블로그 글 하나"를 원본으로 인스타·스레드용으로 요약·재구성한다(블로그=정보성 긴 글, 인스타=핵심만 뽑은 카드뉴스 이미지, 스레드=대화체 짧은 글타래). 인스타·스레드에는 "자세한 내용은 블로그에서" + 발행된 블로그 링크를 넣어 블로그로 유입되게 한다.
-- 발행 순서: ① 네이버 블로그 발행 완료 → ② 그 글 내용과 URL을 가져와 인스타 카드뉴스·스레드 생성 → ③ 발행.
-- 로컬 대시보드(웹페이지)에서 글감찾기 → 초안확인 → 발행까지 누른다.
-- node-cron으로 매일 자동 발행(내 컴퓨터가 켜져 있을 때).
-
-[기술 스택]
-- Node.js + Express 로컬 서버, 대시보드는 정적 HTML/JS.
-- 글 생성 AI: @anthropic-ai/claude-agent-sdk 사용. 인증은 "이미 로그인된 Claude Code(~/.claude)"를 그대로 써 — 사용자가 따로 토큰(claude setup-token / CLAUDE_CODE_OAUTH_TOKEN)을 발급하지 않아도 되게 만들고, README·안내문에도 "토큰 발급 필요 없음. Claude Code에 로그인만 되어 있으면 자동 인증됨"이라고 분명히 써. (.env 에 토큰 넣는 절차는 넣지 마. 로그인이 정말 안 잡히는 특수한 경우에만 'claude setup-token'을 예비로 안내.) ANTHROPIC_API_KEY는 절대 쓰지 마 — 코드나 환경에서 발견하면 지우고 시작해(요금이 API로 따로 청구되는 것 방지).
-- 네이버 발행: Playwright(헤디드 크롬)로 스마트에디터 ONE 자동 입력. 로그인 세션은 .auth/naver.json에 저장해 재사용. Playwright 없으면 설치.
-- 인스타그램 카드뉴스: 본문을 카드뉴스용(표지 1장 + 내용 3~7장)으로 재구성하고 각 장을 이미지로 렌더링(HTML→이미지). 발행은 API·토큰 없이 네이버와 똑같이 Playwright(헤디드 크롬) 브라우저 자동화로 해 — 내가 한 번 로그인해두면 세션을 .auth/instagram.json 에 저장해 재사용하고, 인스타 웹에서 새 게시물 만들기→이미지(캐러셀) 업로드→캡션 입력→공유까지 자동으로. 인스타는 네이버보다 자동화 감지가 엄격하니 사람처럼 천천히 동작하고, 세션이 풀리면 대시보드에서 다시 로그인하게.
-- 스레드(Threads) 발행: 본문을 스레드용 짧은 글(필요하면 이어지는 글타래)로 재구성하고, 마찬가지로 Playwright로 threads.net 웹에서 자동 발행. 세션은 .auth/threads.json 에 저장해 재사용.
-- 세 채널 모두 API 토큰 없이 '내가 직접 로그인 → 세션 저장 → 재사용' 방식(네이버와 동일). 로그인은 대시보드 버튼으로. 특정 채널 로그인이 안 돼 있으면 그 채널만 건너뛰고 나머지는 정상 발행해.
-- 내 스킬 팩(naver-blog-writing, marketing-science-writing 등)이 ~/.claude/skills 에 세팅돼 있으면 채널별 글쓰기에 적극 활용해(블로그=naver-blog-writing, 인스타·스레드=marketing-science-writing).
-
-[반드시 지킬 품질 스펙 — 이게 핵심이야]
-1. 본문 전체 글자 크기 15pt 고정(인트로 포함, 크기 섞지 말 것).
-2. 한 문장 = 한 줄. 모바일에서 단어가 잘리지 않게 어절(띄어쓰기) 단위로 줄바꿈(약 18자 기준).
-3. 리터럴 \n 금지 — 줄바꿈은 진짜 개행으로 넣어(백슬래시+n 글자가 "₩n"으로 찍히는 버그 방지).
-4. 사진 중복 절대 금지 — 한 글 안에서도, 글과 글 사이에서도 같은 이미지 재사용 금지(네이버 유사문서 방지). 매번 새 이미지.
-5. 발행 공개범위 검증 — 발행 직전 원하는 공개범위 라디오가 실제로 선택됐는지 확인하고, 확인 안 되면 발행을 중단해. 네이버 공개설정 라디오는 name=open_type(비공개=#open_private, 전체공개=#open_public)이고 UI가 바뀔 수 있으니 selector를 selectors.json 한 곳에 모아둬.
-6. 첫 소제목 이전엔 인용구 블록을 쓰지 마(네이버 에디터에서 30px로 커지고 뒷 문단까지 커짐). 맨 앞 공감 문장은 일반 본문으로.
-7. 자동으로 붙는 출처 표기(— 뉴스/논문 등)는 생략해서 지저분하지 않게.
-8. 블로그 글이 '원본'이고 인스타·스레드는 그 내용을 채널 형식에 맞게 요약·재구성한 것(그대로 복붙 금지). 인스타 카드뉴스=핵심만 짧게 시각적으로, 스레드=대화체 짧은 글타래. 인스타·스레드 끝에는 발행된 블로그 링크를 함께 넣어 유입을 만들 것.
-
-[내가 정할 것 — 실행 전에 물어봐줘]
-- 내 블로그 ID, 인스타그램 계정, 스레드 계정, 관심 키워드/주제, 채널별 발행 시간, 하루 최대 글 수, 글의 독자(타깃)와 말투, CTA(어디로 유도할지: 링크/오픈채팅 등).
-- 인스타·스레드는 API 토큰 없이, 네이버처럼 대시보드에서 내가 직접 로그인하면 세션을 저장해 자동 발행하게 해줘.
-
-[마지막에]
-- 계획을 먼저 보여주고 내 승인을 받은 뒤 실행해. 다 만든 뒤엔 네가 이해한 내 의도를 요약해서 확인해줘.</pre></button>
-    <p class="lead" style="margin-top:14px">AI가 계획을 보여주면 승인 → 코드 생성·실행. 중간에 <b>블로그 ID·키워드·발행 시간·타깃·CTA</b>를 물어보면 원장님 것으로 답하세요. 스킬 팩을 먼저 세팅해뒀다면, 글 품질이 훨씬 좋아집니다.</p>
-  </section>
-
-  <!-- ===== NAVER + DASHBOARD ===== -->
-  <section class="card">
-    <h2>네이버 로그인 & 첫 발행</h2>
-    <p class="lead">대시보드는 <code>http://localhost:3000</code> 에 뜹니다.</p>
-    <ul class="check">
-      <li><b>네이버 로그인</b> 버튼 → 창에서 직접 로그인(세션 저장돼 다음부턴 자동)</li>
-      <li>설정에서 블로그 ID·키워드·발행 시간·하루 1건 지정</li>
-      <li>글감찾기 → 초안확인 → 발행. <b>첫 발행은 꼭 비공개</b>로 테스트</li>
-    </ul>
-    <div class="note">✅ 발행 전 공개범위 검증이 켜져 있어, 비공개가 실제로 선택 안 되면 발행을 멈춥니다.</div>
-    <p class="lead" style="margin-top:14px">(선택) 이미지 고도화: <a href="https://www.pexels.com/api/" target="_blank" rel="noopener">Pexels 무료 키</a>를 <code>.env</code>에 넣으면 사진 품질이 올라갑니다.</p>
+    <div class="note">💡 글 1개가 올라가는 데 <b>8분에서 20분쯤</b> 걸려요. 그동안 Claude Code와 Aside 창은 닫지 말고 켜 두세요.</div>
   </section>
 
   <!-- ===== SKILL CATALOG ===== -->
@@ -430,12 +381,10 @@ body:not(.locked) .themetoggle{display:none}
     <p class="lead"><b>스킬이 발동 안 해요</b> → “이 스킬들을 클론해서 세팅해줘”로 세팅됐는지 확인. 세팅 후엔 <code>~/.claude/skills/</code> 안에 폴더가 있어야 합니다.</p>
     <p class="lead"><b>AI가 글을 안 써요</b> → <code>claude</code> 구독 로그인 확인. API 키 넣지 마세요.</p>
     <p class="lead"><b>토큰(claude setup-token)을 꼭 발급해야 하나요?</b> → <b>아니요, 안 하셔도 돼요!</b> Claude Code에 로그인만 되어 있으면 자동으로 인증돼요. 터미널에 <code>claude</code> 입력 → 한 번 로그인하면 끝. <code>.env</code>에 토큰 넣는 부분은 건너뛰세요. (토큰은 서버 등 특수한 경우에만 쓰는 예비용이에요.)</p>
-    <p class="lead"><b>네이버 창만 뜨고 멈춰요</b> → “playwright chromium 설치해줘” 요청.</p>
-    <p class="lead"><b>비공개인데 공개로 나갔어요</b> → “공개범위 selector를 다시 확인해서 selectors.json 고쳐줘” 요청.</p>
-    <div class="divider"></div>
-    <p class="lead"><b>[Aside] 쉬운 버전이랑 고급 버전, 같이 써도 되나요?</b> → 네. 하지만 같은 날 같은 블로그에 둘 다 발행하면 글이 겹칠 수 있어요. 하나만 골라 쓰세요.</p>
-    <p class="lead"><b>[Aside] AI가 로그인에서 멈춰요</b> → Aside 비밀번호 관리자에 그 사이트 계정이 저장돼 있는지 확인하세요. 없으면 직접 한 번 로그인하고 저장해요.</p>
-    <p class="lead"><b>[Aside] 글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
+    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
+    <p class="lead"><b>AI가 로그인에서 멈춰요</b> → Aside 브라우저에서 그 사이트에 직접 한 번 로그인하세요. 네이버는 “로그인 상태 유지”를 체크해요.</p>
+    <p class="lead"><b>글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
+    <p class="lead"><b>카드뉴스 이미지를 못 만들어요</b> → 1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “node -v 확인해줘”라고 하면 돼요.</p>
   </section>
 
   <section class="card cta">
