@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>네이버 블로그 자동화 · 유료판</title>
-<meta name="description" content="블로그 자동화 전체 세팅 + 원장 스킬 팩 10종. 이 스킬들을 클론해서 세팅해줘 한 줄이면 완성.">
+<meta name="description" content="블로그 자동화 전체 세팅 + 원장 스킬 팩 3종. 이 스킬들을 클론해서 세팅해줘 한 줄이면 완성.">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +155,7 @@ body:not(.locked) .themetoggle{display:none}
   <header class="hero">
     <span class="badge">유료판 · PREMIUM</span>
     <h1>블로그·인스타·스레드 자동화<br>+ 원장 스킬 팩 풀패키지</h1>
-    <p>네이버 블로그 + 인스타그램 카드뉴스 + 스레드까지 <span class="hl">3채널 자동 발행</span>, 그리고 8년차 원장이 실제로 쓰는 <b>글쓰기·마케팅 스킬 10종</b>을 통째로 드립니다.<br>“이 스킬들을 클론해서 세팅해줘” 한 줄이면 내 실력이 그대로 장착됩니다.</p>
+    <p>네이버 블로그 + 인스타그램 카드뉴스 + 스레드까지 <span class="hl">3채널 자동 발행</span>, 그리고 8년차 원장이 실제로 쓰는 <b>글쓰기·마케팅 스킬 3종</b>을 통째로 드립니다.<br>“이 스킬들을 클론해서 세팅해줘” 한 줄이면 내 실력이 그대로 장착됩니다.</p>
     <div class="kicker">— 지니뷰티랩 네일 아카데미</div>
     <div class="toc">
       <a href="#setup">1 기본 세팅</a>
@@ -164,7 +164,7 @@ body:not(.locked) .themetoggle{display:none}
       <a href="#link">4 Aside 연결</a>
       <a href="#prompt">5 프롬프트</a>
       <a href="#tg1">6·7·8 텔레그램</a>
-      <a href="#catalog">스킬 10종</a>
+      <a href="#catalog">스킬 3종</a>
       <a href="#faq">자주 묻는 질문</a>
     </div>
   </header>
@@ -281,7 +281,7 @@ body:not(.locked) .themetoggle{display:none}
   <!-- ===== STAR: SKILL PACK ===== -->
   <section class="card" id="pack" style="border:2px solid var(--plum)">
     <h2><span class="stepnum plum">3</span> 원장 스킬 팩 <span style="font-size:14px;font-weight:400;color:var(--muted)">(Claude에게 맡기기)</span></h2>
-    <p class="lead">유료판의 핵심 — 네이버 블로그 글쓰기·마케팅 카피·랜딩페이지·기획·팀 자동화까지, 원장이 실제로 쓰는 <b>스킬 10종</b>이에요.</p>
+    <p class="lead">유료판의 핵심 — 네이버 블로그 글쓰기·마케팅 카피·랜딩페이지·기획·팀 자동화까지, 원장이 실제로 쓰는 <b>스킬 3종</b>이에요.</p>
     <p class="lead" style="margin:0 0 8px"><b>Claude Code를 열고, 아래 문장을 그대로 복사해서 붙여넣으세요.</b> Claude가 스킬을 받아서 세팅까지 알아서 해줘요. 원장님이 칠 명령어는 없어요.</p>
     <div class="code"><button class="copy" id="cloneCopy" data-copy="">복사</button><span id="cloneText">🔒 비밀번호 입력 후 여기에 표시됩니다</span></div>
     <div class="divider"></div>
@@ -412,9 +412,8 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
 
   <!-- ===== SKILL CATALOG ===== -->
   <section class="card" id="catalog">
-    <h2>포함된 스킬 10종</h2>
-    <p class="lead">각 스킬은 특정 요청에 자동으로 발동합니다. 블로그 자동화엔 <b>블로그·마케팅 핵심 3종</b>이 특히 강력해요.</p>
-
+    <h2>포함된 스킬 3종</h2>
+    <p class="lead">원장이 실제로 매일 쓰는 것만 남겼어요. 각 스킬은 특정 요청에 <b>자동으로 발동</b>합니다. 따로 켤 필요 없어요.</p>
     <div class="grouplabel">⭐ 블로그·마케팅 핵심</div>
     <div class="skillgrid">
       <div class="skill"><h4>naver-blog-writing <span class="tag core">핵심</span></h4>
@@ -422,27 +421,9 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
       <div class="skill"><h4>marketing-science-writing <span class="tag core">핵심</span></h4>
         <p>행동경제학·소비자 심리 기반 설득 카피. 카드뉴스·인스타/스레드 캡션·유튜브 스크립트·세일즈 카피·후크·CTA. “더 설득력 있게” 하면 자동 발동.</p></div>
       <div class="skill"><h4>homepage-builder-kr <span class="tag core">핵심</span></h4>
-        <p>한국어 홈페이지/랜딩/쇼핑몰을 인터뷰→Next.js→Supabase→토스페이먼츠→Vercel 배포까지 한 흐름으로 제작.</p></div>
+        <p>우리 샵 랜딩페이지·홈페이지를 기획 인터뷰부터 배포까지 한 흐름으로 제작. “홈페이지 만들어줘” 하면 자동 발동.</p></div>
     </div>
-
-    <div class="grouplabel">🛠 기획·자동화 보조</div>
-    <div class="skillgrid">
-      <div class="skill"><h4>feature-planner <span class="tag aux">보조</span></h4>
-        <p>기능/프로젝트를 단계별 계획으로 쪼개고 품질 게이트를 세우는 기획 스킬.</p></div>
-      <div class="skill"><h4>team <span class="tag aux">보조</span></h4>
-        <p>여러 AI 에이전트를 팀으로 묶어 병렬 작업. “팀 만들어/동시에 진행” 시 발동.</p></div>
-      <div class="skill"><h4>find-hooks <span class="tag aux">보조</span></h4>
-        <p>커뮤니티에서 Claude Code 훅·명령·플러그인·MCP를 찾아 설치. “훅 추천해줘” 시 발동.</p></div>
-      <div class="skill"><h4>skillsmp-search <span class="tag aux">보조</span></h4>
-        <p>SkillsMP 마켓플레이스에서 필요한 AI 스킬을 키워드·의미 검색으로 발굴.</p></div>
-      <div class="skill"><h4>agent-reach <span class="tag aux">보조</span></h4>
-        <p>AI에게 트위터·레딧·유튜브·깃허브 등 인터넷/소셜 접근을 하나로 열어주는 CLI 설치·설정.</p></div>
-      <div class="skill"><h4>merge-worktree <span class="tag aux">보조</span></h4>
-        <p>깃 워크트리 브랜치를 메인으로 스쿼시 병합하며 커밋 메시지를 자동 정리.</p></div>
-      <div class="skill"><h4>orca-cli <span class="tag aux">보조</span></h4>
-        <p>orca CLI 연동 스킬(외부 도구).</p></div>
-    </div>
-    <p class="lead" style="margin-top:16px"><small class="dim">스킬은 원장님이 직접 만들거나 설치해 쓰던 것들입니다. 일부(agent-reach·skillsmp-search·orca-cli)는 외부 오픈소스 도구를 설치/연동하는 스킬이라, 실제 사용 시 각 도구의 안내를 따르세요.</small></p>
+    <div class="note" style="margin-top:14px">💡 Aside 브라우저 연결 스킬(aside-browser)은 이 팩이 아니라 <b>4번 “Claude Code와 Aside 이어 주기”</b>에서 따로 설치돼요.</div>
   </section>
 
   <section class="card" id="faq">
