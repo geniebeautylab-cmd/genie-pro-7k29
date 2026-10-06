@@ -71,6 +71,15 @@ h1,h2,h3{font-family:"Noto Sans KR";line-height:1.35}
 .plat{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;margin:8px 0}
 .plat button{border:none;background:transparent;color:var(--muted);font-weight:700;font-size:14px;padding:7px 18px;border-radius:999px;cursor:pointer}
 .plat button.on{background:var(--rose);color:#fff}
+.faqtabs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px}
+.faqtabs button{border:1.5px solid var(--line);background:transparent;color:var(--muted);padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer}
+.faqtabs button.on{background:var(--rose);border-color:var(--rose);color:#fff}
+.faqpane{display:none}.faqpane.on{display:block}
+.faqpane .q{margin:0 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;font-size:14.5px;color:var(--ink)}
+.faqpane .q b{display:block;margin-bottom:4px}
+.stepnum.tg{background:#2AABEE}
+.optbox{border:1.5px dashed var(--line);border-radius:14px;padding:14px 16px;margin:14px 0}
+.optbox h4{margin:0 0 6px;font-size:15px}
 .mac,.win{display:none}
 body[data-os="mac"] .mac{display:block}
 body[data-os="win"] .win{display:block}
@@ -154,8 +163,9 @@ body:not(.locked) .themetoggle{display:none}
       <a href="#pack">3 스킬 팩</a>
       <a href="#link">4 Aside 연결</a>
       <a href="#prompt">5 프롬프트</a>
+      <a href="#tg1">6·7·8 텔레그램</a>
       <a href="#catalog">스킬 10종</a>
-      <a href="#faq">문제해결</a>
+      <a href="#faq">자주 묻는 질문</a>
     </div>
   </header>
 
@@ -169,6 +179,9 @@ body:not(.locked) .themetoggle{display:none}
       <li><a href="#pack">원장 스킬 팩 받기</a></li>
       <li><a href="#link">Claude Code와 Aside 이어 주기</a></li>
       <li><a href="#prompt">프롬프트 붙여넣고 첫 글 올리기</a></li>
+      <li><a href="#tg1">텔레그램 봇 만들기</a> <span style="color:var(--muted);font-size:13px">(선택 · 3분)</span></li>
+      <li><a href="#tg2">Claude Code에 텔레그램 연결 문장 붙여넣기</a></li>
+      <li><a href="#tg3">텔레그램으로 받아서 확인하고 올리기</a></li>
     </ol>
   </section>
 
@@ -344,6 +357,50 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
     <div class="note">💡 글 1개가 올라가는 데 <b>8분에서 20분쯤</b> 걸려요. 그동안 Claude Code와 Aside 창은 닫지 말고 켜 두세요.</div>
   </section>
 
+  <!-- ===== TELEGRAM 6-8 ===== -->
+  <section class="card" id="tg1" style="border:2px solid #2AABEE">
+    <h2><span class="stepnum tg">6</span> 텔레그램 봇 만들기 <span style="font-size:14px;font-weight:400;color:var(--muted)">(선택 · 휴대폰에서 3분)</span></h2>
+    <p class="lead">글이 올라갈 때마다 <b>블로그 링크 + 카드뉴스 사진 + 인스타·스레드 문구</b>를 텔레그램으로 받아 보는 기능이에요. 인스타 계정을 자동화에 연결하는 게 불안한 원장님은 <b>올리는 건 직접 하고, 만드는 것만 맡기는</b> 방식으로도 쓸 수 있어요. 안 쓰실 거면 6~8번은 건너뛰어도 돼요.</p>
+    <ol class="steps">
+      <li>휴대폰에 <b>텔레그램</b> 앱을 설치하고 가입해요.</li>
+      <li>검색창에 <b>BotFather</b>를 치고, 파란 인증 체크가 붙은 공식 계정을 열어요.</li>
+      <li>대화창에 <b>/newbot</b> 이라고 보내요.</li>
+      <li>봇 <b>이름</b>을 물어보면 아무거나 적어요. (예: 우리샵 카드뉴스)</li>
+      <li>봇 <b>아이디</b>를 물어보면 영문으로, 끝은 꼭 <b>bot</b>으로 끝나게 적어요. (예: ourshop_cardnews_bot) 이미 있는 아이디라고 하면 뒤에 숫자를 붙여요.</li>
+      <li>BotFather가 긴 글자 한 줄(<b>토큰</b>)을 보내줘요. 그걸 <b>길게 눌러 복사</b>해 두세요.</li>
+      <li>마지막으로, 방금 만든 내 봇을 검색해서 열고 <b>“안녕”</b>이라고 한 번 보내요. (이걸 해야 Claude가 원장님 방을 찾을 수 있어요)</li>
+    </ol>
+    <div class="warn">토큰은 내 봇의 비밀번호예요. <b>카톡방·화면공유에 올리지 마세요.</b> 다음 7번에서 Claude Code에만 붙여넣어요.</div>
+  </section>
+
+  <section class="card" id="tg2" style="border:2px solid #2AABEE">
+    <h2><span class="stepnum tg">7</span> Claude Code에 텔레그램 연결 문장 붙여넣기</h2>
+    <p class="lead">아래 상자를 복사해서 <b>Claude Code</b>에 붙여넣고, <b>[토큰]</b> 자리만 6번에서 복사한 토큰으로 바꾸세요. 챗 아이디 찾기, 설정 파일 저장, 테스트 전송은 전부 Claude가 해요.</p>
+    <button class="big-copy" id="tgBox"><span class="lbl">전체 복사</span><pre id="tgText">텔레그램으로 결과를 받고 싶어. 내 텔레그램 봇 토큰은 [토큰] 이야.
+내가 방금 그 봇에게 "안녕"이라고 보내 놨으니, 챗 아이디는 네가 찾아서 설정에 저장해줘.
+설정이 끝나면 "연결 완료"라고 테스트 메시지를 하나 보내줘.
+앞으로 글을 올릴 때마다 ① 블로그 글 링크 ② 카드뉴스 이미지 전부 ③ 인스타 캡션 ④ 스레드 문구를 텔레그램으로 보내줘.
+토큰은 다른 데 적지 말고 설정 파일에만 저장해.</pre></button>
+    <p class="lead" style="margin-top:12px">휴대폰 텔레그램에 <b>“연결 완료”</b>가 오면 끝이에요. 안 오면 6번 7단계(내 봇에게 “안녕” 보내기)를 했는지 확인하고 “텔레그램 다시 연결해줘”라고 말하세요.</p>
+    <div class="optbox">
+      <h4>인스타·스레드는 내가 직접 올리고 싶다면 (방법 B)</h4>
+      <p class="lead" style="margin:0 0 8px">인스타 계정을 자동화에 연결하지 않는 방식이에요. 아래 한 줄을 추가로 붙여넣으세요.</p>
+      <button class="big-copy" id="tgBBox"><span class="lbl">전체 복사</span><pre id="tgBText">인스타그램과 스레드는 Aside로 자동 업로드하지 마. 카드뉴스 이미지와 캡션, 스레드 문구를 텔레그램으로만 보내 주면 올리는 건 내가 직접 할게. 블로그는 지금처럼 Aside로 올려줘.</pre></button>
+    </div>
+  </section>
+
+  <section class="card" id="tg3" style="border:2px solid #2AABEE">
+    <h2><span class="stepnum tg">8</span> 텔레그램으로 받아서 확인하고 올리기</h2>
+    <p class="lead">이제부터는 설정할 게 없어요. 글이 올라가면 텔레그램에 아래 네 가지가 도착해요.</p>
+    <ul class="check">
+      <li><b>블로그 글 링크</b> → 눌러서 글자 크기·사진이 괜찮은지 확인</li>
+      <li><b>카드뉴스 사진</b> (보통 5~7장) → 사진을 길게 눌러 <b>저장</b></li>
+      <li><b>인스타 캡션</b> → 길게 눌러 <b>복사</b> → 인스타 새 게시물에 저장한 사진 순서대로 올리고 붙여넣기</li>
+      <li><b>스레드 문구</b> → 그대로 복사해서 스레드에 붙여넣기 (반말체로 이미 다듬어져 있어요)</li>
+    </ul>
+    <div class="note">💡 Aside가 인스타·스레드까지 자동으로 올리는 원장님은 텔레그램을 <b>“잘 올라갔나” 알림용</b>으로만 쓰면 돼요. 방법 B를 고른 원장님은 올리기 전에 한 번 훑어보는 이 여유가 장점이에요.</div>
+  </section>
+
   <!-- ===== SKILL CATALOG ===== -->
   <section class="card" id="catalog">
     <h2>포함된 스킬 10종</h2>
@@ -380,15 +437,67 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
   </section>
 
   <section class="card" id="faq">
-    <h2>문제해결 FAQ</h2>
-    <p class="lead"><b>스킬이 발동 안 해요</b> → Claude Code에 “원장 스킬 팩이 설치돼 있는지 확인해줘”라고 물어보세요. 없다고 하면 3번 문장을 다시 붙여넣어요.</p>
-    <p class="lead"><b>AI가 글을 안 써요</b> → Claude 앱에 Pro 계정으로 로그인돼 있는지 확인하세요. API 키는 넣지 마세요.</p>
-    <p class="lead"><b>토큰이나 API 키를 발급해야 하나요?</b> → <b>아니요.</b> Claude 앱에 로그인만 되어 있으면 자동으로 돼요. 토큰·키 이야기가 나오면 전부 건너뛰세요.</p>
-    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 먼저 2번 ③ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
-    <p class="lead"><b>Aside가 "원고 파일을 읽을 수 없어요"라고 해요</b> → Claude Code에 “Aside를 전체 접근 권한으로 다시 실행해줘”라고 말하세요. 4번 연결 문장을 다시 붙여넣어도 돼요.</p>
-    <p class="lead"><b>AI가 로그인에서 멈춰요</b> → Aside 브라우저에서 그 사이트에 직접 한 번 로그인하세요. 네이버는 “로그인 상태 유지”를 체크해요.</p>
-    <p class="lead"><b>글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
-    <p class="lead"><b>카드뉴스 이미지를 못 만들어요</b> → 1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “Node.js가 설치돼 있는지 확인해줘”라고 하면 돼요.</p>
+    <h2>자주 묻는 질문</h2>
+    <p class="lead" style="margin-bottom:8px">1기 원장님들이 실제로 많이 물어본 것들이에요. 탭을 눌러 골라 보세요.</p>
+    <div class="faqtabs" role="tablist">
+      <button class="on" onclick="setFaq('install',this)">설치</button>
+      <button onclick="setFaq('mode',this)">Claude 쓰는 법</button>
+      <button onclick="setFaq('aside',this)">Aside</button>
+      <button onclick="setFaq('publish',this)">발행·로그인</button>
+      <button onclick="setFaq('tg',this)">텔레그램</button>
+      <button onclick="setFaq('stuck',this)">막혔을 때</button>
+    </div>
+
+    <div class="faqpane on" data-faq="install">
+      <div class="q"><b>채팅창에 물어봤는데 아무것도 안 만들어줘요.</b>일반 채팅은 답만 해요. 실제로 뭔가 만들려면 Claude 앱 오른쪽 위 <b>&lt;/&gt;</b> 아이콘을 눌러 <b>Claude Code</b> 창에서 해야 해요.</div>
+      <div class="q"><b>GitHub 로그인이랑 Claude 로그인이 다른가요?</b>네, 서로 다른 계정이에요. GitHub 비밀번호를 만든 적이 없으면 GitHub에서 새로 가입하면 돼요.</div>
+      <div class="q"><b>윈도우인데 x64 / ARM64 중 뭘 받아요?</b>거의 다 <b>x64</b>예요. 헷갈리면 x64로 받으세요.</div>
+      <div class="q"><b>검은 창(터미널)이 갑자기 떴어요. 켜 놔야 하나요?</b>아니요, X로 닫아도 돼요. 이 가이드에서는 터미널을 쓰지 않아요. 전부 Claude Code에 말로 하면 돼요.</div>
+      <div class="q"><b>설치가 너무 오래 걸려요 / 멈춘 것 같아요.</b>오래된 노트북은 10분 넘게 걸리기도 해요. 진행바가 움직이면 기다리고, 완전히 멈춘 것 같으면 화면을 캡처해서 Claude Code에 붙여넣고 물어보세요.</div>
+      <div class="q"><b>휴대폰으로 해도 되나요?</b>설치와 세팅은 꼭 <b>노트북·PC</b>에서 해야 해요. 휴대폰은 텔레그램 확인용으로만 써요.</div>
+      <div class="q"><b>카드뉴스 이미지를 못 만들어요.</b>1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “Node.js가 설치돼 있는지 확인해줘”라고 하면 돼요.</div>
+    </div>
+
+    <div class="faqpane" data-faq="mode">
+      <div class="q"><b>계획 모드는 언제 써요?</b>뭔가 <b>새로 만들 때</b>는 계획 모드로 먼저 시작해요. 끝에 “네가 내 말을 잘 이해했는지 설명해줘”를 붙이면 Claude가 계획을 먼저 보여줘요. 맞으면 그때 실행으로 넘어가요. 토큰 낭비가 줄어요.</div>
+      <div class="q"><b>노력(사고력) 낮음·중간·높음은 뭘 골라요?</b>계획 짤 때는 <b>높음</b>, 이미 정해진 걸 실행만 할 때는 <b>낮음</b>이에요. 이 가이드의 5번 프롬프트처럼 다 적어 준 건 낮음으로 시작해도 돼요.</div>
+      <div class="q"><b>뭘 골라야 할지 모르는 선택지가 떠요.</b><b>권장(추천)</b>이라고 적힌 걸 그대로 고르면 돼요. 이해하고 싶으면 “이해하기 쉽게 설명해줘”라고 하세요.</div>
+      <div class="q"><b>영어로 답하거나 너무 어렵게 말해요.</b>“한국어로, 코딩 지식이 전혀 없으니 초등학생도 이해하게 설명해줘”라고 하면 바로 바뀌어요.</div>
+      <div class="q"><b>“허용할까요?” 창이 자꾸 떠요.</b><b>항상 허용</b>이 있으면 그걸, 없으면 <b>한 번만 허용</b>을 누르면 돼요.</div>
+      <div class="q"><b>토큰(사용량)을 다 썼대요.</b>Pro 구독에 포함된 한도예요. <b>약 5시간 뒤</b> 자동으로 다시 채워지니 잠시 쉬었다가 하세요. API 키나 토큰을 따로 발급받을 필요는 없어요.</div>
+      <div class="q"><b>스킬이 발동 안 해요.</b>Claude Code에 “원장 스킬 팩이 설치돼 있는지 확인해줘”라고 물어보세요. 없다고 하면 3번 문장을 다시 붙여넣어요.</div>
+    </div>
+
+    <div class="faqpane" data-faq="aside">
+      <div class="q"><b>Claude Code가 Aside를 못 찾아요.</b>2번 ③ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 연결 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있어야 해요.</div>
+      <div class="q"><b>Aside가 “원고 파일을 읽을 수 없어요”라고 해요.</b>Claude Code에 “Aside를 전체 접근 권한으로 다시 실행해줘”라고 말하세요.</div>
+      <div class="q"><b>Aside가 로그인 화면에서 멈췄어요.</b>Aside 브라우저에서 그 사이트에 직접 한 번 로그인하고 “로그인했어”라고 말하면 이어서 해요. 네이버는 <b>“로그인 상태 유지”</b>를 꼭 체크하세요. 크롬에 로그인돼 있어도 Aside는 그걸 못 써요.</div>
+      <div class="q"><b>Aside 설정 메뉴 이름이 가이드 사진과 달라요.</b>업데이트로 조금씩 바뀌어요. Aside 채팅창에 “Claude 구독 연결하는 법 알려줘”처럼 물어보면 돼요.</div>
+      <div class="q"><b>글 올리는 중에 컴퓨터를 꺼도 되나요?</b>안 돼요. 끝날 때까지 Claude Code와 Aside 창을 켜 두세요. 글 1개에 8~25분쯤 걸려요.</div>
+    </div>
+
+    <div class="faqpane" data-faq="publish">
+      <div class="q"><b>발행 순서가 어떻게 되나요?</b>① 네이버 블로그 발행 → ② 그 글로 인스타 카드뉴스·스레드 문구 만들기 → ③ 인스타·스레드 발행. 인스타·스레드 글 끝에는 블로그 링크가 들어가서 블로그로 유입돼요.</div>
+      <div class="q"><b>AI가 글을 안 써요.</b>Claude 앱에 Pro 계정으로 로그인돼 있는지 확인하세요. API 키는 넣지 마세요.</div>
+      <div class="q"><b>글자 크기나 줄바꿈이 이상해요.</b>“본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 바로 고쳐줘요.</div>
+      <div class="q"><b>첫 글은 왜 비공개로 올려요?</b>글자 크기·사진·줄바꿈을 내 눈으로 한 번 확인하려고요. 괜찮으면 5번 [내 정보]의 공개범위를 <b>전체공개</b>로 바꾸면 돼요.</div>
+      <div class="q"><b>임시저장 글이 생겼어요.</b>중간에 다시 쓴 흔적이에요. 블로그 임시저장함에서 지우면 돼요.</div>
+    </div>
+
+    <div class="faqpane" data-faq="tg">
+      <div class="q"><b>텔레그램으로 메시지가 안 와요.</b>제일 흔한 원인은 내 봇에게 <b>“안녕”을 먼저 안 보낸 것</b>이에요. 봇은 먼저 말을 못 걸어요. 보낸 다음 Claude Code에 “텔레그램 다시 연결해줘”라고 하세요.</div>
+      <div class="q"><b>토큰을 어디 뒀는지 잊어버렸어요.</b>BotFather 대화창에 <b>/mybots</b> → 내 봇 선택 → <b>API Token</b>을 누르면 다시 볼 수 있어요.</div>
+      <div class="q"><b>토큰이 카톡방에 노출됐어요.</b>BotFather에 <b>/revoke</b>를 보내면 새 토큰이 나와요. 새 토큰으로 7번을 다시 하세요.</div>
+      <div class="q"><b>봇 이름을 잘못 지었어요.</b>BotFather에 <b>/setname</b>으로 이름만 바꿀 수 있어요. 다시 만들 필요 없어요.</div>
+      <div class="q"><b>이 방법은 인스타 계정이 안전한가요?</b>텔레그램 봇은 인스타와 아무 관련이 없어요. 방법 B를 고르면 인스타 계정 정보는 어디에도 들어가지 않고, 올리는 건 늘 원장님이 인스타 앱에서 직접 해요.</div>
+    </div>
+
+    <div class="faqpane" data-faq="stuck">
+      <div class="q"><b>“안돼요”라고만 하면 Claude가 못 고쳐요.</b><b>언제 · 뭘 눌렀을 때 · 어떤 화면이 나왔는지</b>를 같이 말해 주세요. 예: “로그인 창은 떴는데 아이디를 치려는 순간 창이 꺼져요.”</div>
+      <div class="q"><b>말로 설명하기 애매해요.</b>화면을 캡처해서 Claude Code 입력창에 붙여넣기(Cmd+V / Ctrl+V)하면 사진이 같이 들어가요. 이게 제일 빨라요.</div>
+      <div class="q"><b>같은 오류가 계속 반복돼요.</b>“지금까지 시도한 걸 정리하고, 다른 방법으로 다시 해봐”라고 하세요. 그래도 안 되면 캡처와 함께 <b>챌린지 카톡방</b>에 올려 주세요. 라이브 때 같이 풀어요.</div>
+      <div class="q"><b>이 페이지를 다른 사람과 공유해도 되나요?</b>안 돼요. 2기 결제하신 원장님 전용이에요. 링크와 비밀번호는 공유하지 말아 주세요.</div>
+    </div>
   </section>
 
   <section class="card" style="text-align:center">
@@ -399,6 +508,7 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
 </div>
 
 <script>
+function setFaq(k,btn){document.querySelectorAll('.faqpane').forEach(function(p){p.classList.toggle('on',p.dataset.faq===k)});document.querySelectorAll('.faqtabs button').forEach(function(b){b.classList.toggle('on',b===btn)});}
 function setOS(os){document.body.dataset.os=os;
   document.getElementById('btnMac').classList.toggle('on',os==='mac');
   document.getElementById('btnWin').classList.toggle('on',os==='win');
