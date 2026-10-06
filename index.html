@@ -196,7 +196,7 @@ body:not(.locked) .themetoggle{display:none}
     <h3 style="font-size:17px;margin:0 0 4px">③ Node.js 설치</h3>
     <p class="lead">인스타 <b>카드뉴스 이미지</b>를 만들 때 <b>Node.js</b>가 필요해요. LTS 버전으로 설치해두세요.</p>
     <div class="btnrow"><a class="btn ghost" href="https://nodejs.org/ko/download" target="_blank" rel="noopener">Node.js 다운로드 ↗</a></div>
-    <div class="code"><button class="copy" data-copy="node -v">복사</button>node -v</div>
+    <p class="lead" style="margin-top:8px">설치 파일을 열어 <b>다음</b>만 계속 누르면 끝이에요. 따로 확인할 건 없어요.</p>
   </section>
 
   <!-- ===== EASY: ASIDE ===== -->
@@ -227,20 +227,7 @@ body:not(.locked) .themetoggle{display:none}
     </ol>
     <figure class="shot"><img src="img/aside-2-models.jpg" alt="Aside 설정의 Models 화면" loading="lazy"><figcaption>설정 → Models → Connect</figcaption></figure>
 
-    <h4 class="substep">③ 새 채팅에서 두 가지 바꾸기</h4>
-    <ol class="steps">
-      <li>왼쪽 위 <b>New Chat</b>을 눌러요.</li>
-      <li>입력창 왼쪽 아래를 눌러 <b>Ask first</b>로 바꿔요. (올리기 전에 원장님께 먼저 물어봐요)</li>
-    </ol>
-    <figure class="shot"><img src="img/aside-3-askfirst.jpg" alt="Ask first 선택 화면" loading="lazy"><figcaption>입력창 왼쪽 아래 → Ask first</figcaption></figure>
-    <ol class="steps" start="3">
-      <li>입력창 오른쪽 아래를 눌러 <b>Claude Sonnet</b>을 골라요.</li>
-    </ol>
-    <figure class="shot"><img src="img/aside-4-model.jpg" alt="Claude Sonnet 모델 선택 화면" loading="lazy"><figcaption>입력창 오른쪽 아래 → Claude Sonnet</figcaption></figure>
-    <div class="note">⚠️ <b>“Skip confirmation”이 켜져 있으면 확인 없이 바로 발행돼요.</b> 꼭 “Ask first”로 바꿔 두세요.</div>
-    <div class="warn">메뉴 이름은 업데이트로 조금 바뀔 수 있어요. 안 보이면 Aside 채팅창에 “Claude 구독 연결하는 방법 알려줘”라고 물어보세요.</div>
-
-    <h4 class="substep">④ Aside CLI 설치하기 (꼭 해야 해요)</h4>
+    <h4 class="substep">③ Aside CLI 설치하기 (꼭 해야 해요)</h4>
     <p class="lead" style="margin-bottom:8px"><b>CLI</b>는 Claude Code가 Aside를 부를 때 쓰는 <b>“연결 통로”</b>예요. 이게 없으면 Claude Code는 Aside가 설치된 줄도 몰라요. 글은 써도 올리지 못해요.</p>
     <ol class="steps">
       <li>맨 위 메뉴에서 <b>Aside → 설정</b>을 눌러요.</li>
@@ -273,7 +260,7 @@ body:not(.locked) .themetoggle{display:none}
   <section class="card" id="pack" style="border:2px solid var(--plum)">
     <h2><span class="stepnum plum">3</span> 원장 스킬 팩 <span style="font-size:14px;font-weight:400;color:var(--muted)">(Claude에게 맡기기)</span></h2>
     <p class="lead">유료판의 핵심 — 네이버 블로그 글쓰기·마케팅 카피·랜딩페이지·기획·팀 자동화까지, 원장이 실제로 쓰는 <b>스킬 10종</b>이에요.</p>
-    <p class="lead" style="margin:0 0 8px"><b>Claude Code를 열고, 아래 문장을 그대로 복사해서 붙여넣으세요.</b> Claude가 스킬을 받아 <code>~/.claude/skills/</code> 에 세팅까지 알아서 해줘요.</p>
+    <p class="lead" style="margin:0 0 8px"><b>Claude Code를 열고, 아래 문장을 그대로 복사해서 붙여넣으세요.</b> Claude가 스킬을 받아서 세팅까지 알아서 해줘요. 원장님이 칠 명령어는 없어요.</p>
     <div class="code"><button class="copy" id="cloneCopy" data-copy="">복사</button><span id="cloneText">🔒 비밀번호 입력 후 여기에 표시됩니다</span></div>
     <div class="divider"></div>
     <div class="note" style="border:1px dashed var(--plum);background:var(--rose-soft)">📌 세팅이 끝나면, 앞으로 <b>“블로그 글 써줘”</b> 같은 요청에 이 스킬들이 <b>자동으로 적용</b>돼요 (예: naver-blog-writing 스킬 발동). 따로 켤 필요 없어요.</div>
@@ -282,11 +269,10 @@ body:not(.locked) .themetoggle{display:none}
   <!-- ===== LINK CLAUDE CODE + ASIDE ===== -->
   <section class="card" id="link">
     <h2><span class="stepnum ok">4</span> Claude Code와 Aside 이어 주기</h2>
-    <p class="lead">2번 ④에서 깐 CLI를 Claude Code가 실제로 쓰도록 이어 주는 단계예요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
-    <button class="big-copy" id="linkBox"><span class="lbl">전체 복사</span><pre id="linkText">Aside 명령어 도구(CLI)가 없으면 설치해줘.
-그다음 터미널에서 aside skills install --target claude-code 를 실행해서 Aside 브라우저를 연결해줘.
+    <p class="lead">2번 ③에서 깐 CLI를 Claude Code가 실제로 쓰도록 이어 주는 단계예요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
+    <button class="big-copy" id="linkBox"><span class="lbl">전체 복사</span><pre id="linkText">Aside 브라우저를 네가 쓸 수 있게 연결해줘. (Aside CLI는 이미 설치했어. 필요한 설치나 설정은 네가 알아서 해줘.)
 앞으로 브라우저가 필요한 일은 크롬 확장 말고 Aside로 해줘.</pre></button>
-    <p class="lead" style="margin-top:12px">중간에 “설치해도 될까요?” 하고 물으면 허용을 눌러요. 한 번만 하면 돼요.</p>
+    <p class="lead" style="margin-top:12px">중간에 “설치해도 될까요?”, “실행해도 될까요?” 하고 물으면 <b>허용</b>을 눌러요. 한 번만 하면 돼요. 원장님이 직접 칠 명령어는 없어요.</p>
   </section>
 
   <!-- ===== MASTER PROMPT ===== -->
@@ -394,10 +380,10 @@ body:not(.locked) .themetoggle{display:none}
 
   <section class="card" id="faq">
     <h2>문제해결 FAQ</h2>
-    <p class="lead"><b>스킬이 발동 안 해요</b> → “이 스킬들을 클론해서 세팅해줘”로 세팅됐는지 확인. 세팅 후엔 <code>~/.claude/skills/</code> 안에 폴더가 있어야 합니다.</p>
-    <p class="lead"><b>AI가 글을 안 써요</b> → <code>claude</code> 구독 로그인 확인. API 키 넣지 마세요.</p>
-    <p class="lead"><b>토큰(claude setup-token)을 꼭 발급해야 하나요?</b> → <b>아니요, 안 하셔도 돼요!</b> Claude Code에 로그인만 되어 있으면 자동으로 인증돼요. 터미널에 <code>claude</code> 입력 → 한 번 로그인하면 끝. <code>.env</code>에 토큰 넣는 부분은 건너뛰세요. (토큰은 서버 등 특수한 경우에만 쓰는 예비용이에요.)</p>
-    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 먼저 2번 ④ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
+    <p class="lead"><b>스킬이 발동 안 해요</b> → Claude Code에 “원장 스킬 팩이 설치돼 있는지 확인해줘”라고 물어보세요. 없다고 하면 3번 문장을 다시 붙여넣어요.</p>
+    <p class="lead"><b>AI가 글을 안 써요</b> → Claude 앱에 Pro 계정으로 로그인돼 있는지 확인하세요. API 키는 넣지 마세요.</p>
+    <p class="lead"><b>토큰이나 API 키를 발급해야 하나요?</b> → <b>아니요.</b> Claude 앱에 로그인만 되어 있으면 자동으로 돼요. 토큰·키 이야기가 나오면 전부 건너뛰세요.</p>
+    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 먼저 2번 ③ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
     <p class="lead"><b>AI가 로그인에서 멈춰요</b> → Aside 브라우저에서 그 사이트에 직접 한 번 로그인하세요. 네이버는 “로그인 상태 유지”를 체크해요.</p>
     <p class="lead"><b>글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
     <p class="lead"><b>카드뉴스 이미지를 못 만들어요</b> → 1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “node -v 확인해줘”라고 하면 돼요.</p>
