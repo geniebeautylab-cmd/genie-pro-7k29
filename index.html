@@ -165,7 +165,7 @@ body:not(.locked) .themetoggle{display:none}
     <p class="lead"><b>Claude Code</b>가 글쓰기부터 올리기까지 다 해요. 화면을 누르는 일만 <b>Aside 브라우저</b>가 맡아요. 아래 순서대로 따라 하세요.</p>
     <ol class="steps">
       <li><a href="#setup">기본 세팅</a>: Claude Code, git, Node.js</li>
-      <li><a href="#aside">Aside 설치하고 로그인하기</a></li>
+      <li><a href="#aside">Aside 설치하고 로그인하기 (CLI 설치까지)</a></li>
       <li><a href="#pack">원장 스킬 팩 받기</a></li>
       <li><a href="#link">Claude Code와 Aside 이어 주기</a></li>
       <li><a href="#prompt">프롬프트 붙여넣고 첫 글 올리기</a></li>
@@ -240,6 +240,22 @@ body:not(.locked) .themetoggle{display:none}
     <div class="note">⚠️ <b>“Skip confirmation”이 켜져 있으면 확인 없이 바로 발행돼요.</b> 꼭 “Ask first”로 바꿔 두세요.</div>
     <div class="warn">메뉴 이름은 업데이트로 조금 바뀔 수 있어요. 안 보이면 Aside 채팅창에 “Claude 구독 연결하는 방법 알려줘”라고 물어보세요.</div>
 
+    <h4 class="substep">④ Aside CLI 설치하기 (꼭 해야 해요)</h4>
+    <p class="lead" style="margin-bottom:8px"><b>CLI</b>는 Claude Code가 Aside를 부를 때 쓰는 <b>“연결 통로”</b>예요. 이게 없으면 Claude Code는 Aside가 설치된 줄도 몰라요. 글은 써도 올리지 못해요.</p>
+    <ol class="steps">
+      <li>맨 위 메뉴에서 <b>Aside → 설정</b>을 눌러요.</li>
+      <li>왼쪽 목록 맨 아래쪽 <b>Developers</b>를 눌러요.</li>
+      <li>맨 위 <b>Aside CLI</b> 상자에서 검은색 <b>Install</b> 버튼을 눌러요. (사진처럼 <b>Reinstall</b>로 바뀌면 설치된 거예요)</li>
+      <li>바로 아래 <b>Enable Aside MCP server</b> 스위치가 <b>초록색(켜짐)</b>인지 확인해요.</li>
+    </ol>
+    <figure class="shot"><img src="img/aside-5-cli.jpg" alt="Aside 설정의 Developers 화면 — Aside CLI Install 버튼과 MCP server 스위치" loading="lazy"><figcaption>설정 → Developers → Aside CLI Install · MCP server 켜짐</figcaption></figure>
+    <ol class="steps" start="5">
+      <li>이제 <b>Claude Code</b>로 돌아와서 아래 문장을 그대로 붙여넣어요.</li>
+    </ol>
+    <button class="big-copy" id="cliCheckBox"><span class="lbl">전체 복사</span><pre id="cliCheckText">클로드코드에 aside cli 설치 되어있는지 확인해봐!</pre></button>
+    <p class="lead" style="margin-top:12px">Claude Code가 <b>“설치되어 있어요”</b>라고 답하면 Aside 설치 끝이에요. “없어요”라고 하면 위 3번 Install 버튼을 다시 누르고, Claude Code를 껐다 켠 뒤 한 번 더 물어보세요.</p>
+    <div class="note">✅ <b>여기까지 해야 Aside 설치 완료예요.</b> Aside 앱만 깔고 CLI를 안 깔면, 4번 “이어 주기”에서 Claude Code가 Aside를 못 찾아요.</div>
+
     <div class="divider"></div>
     <h3 style="font-size:17px;margin:0 0 4px">계정 3개에 한 번씩 로그인하기</h3>
     <ul class="check">
@@ -266,7 +282,7 @@ body:not(.locked) .themetoggle{display:none}
   <!-- ===== LINK CLAUDE CODE + ASIDE ===== -->
   <section class="card" id="link">
     <h2><span class="stepnum ok">4</span> Claude Code와 Aside 이어 주기</h2>
-    <p class="lead">이 단계를 해야 Claude Code가 Aside를 부를 수 있어요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
+    <p class="lead">2번 ④에서 깐 CLI를 Claude Code가 실제로 쓰도록 이어 주는 단계예요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
     <button class="big-copy" id="linkBox"><span class="lbl">전체 복사</span><pre id="linkText">Aside 명령어 도구(CLI)가 없으면 설치해줘.
 그다음 터미널에서 aside skills install --target claude-code 를 실행해서 Aside 브라우저를 연결해줘.
 앞으로 브라우저가 필요한 일은 크롬 확장 말고 Aside로 해줘.</pre></button>
@@ -381,7 +397,7 @@ body:not(.locked) .themetoggle{display:none}
     <p class="lead"><b>스킬이 발동 안 해요</b> → “이 스킬들을 클론해서 세팅해줘”로 세팅됐는지 확인. 세팅 후엔 <code>~/.claude/skills/</code> 안에 폴더가 있어야 합니다.</p>
     <p class="lead"><b>AI가 글을 안 써요</b> → <code>claude</code> 구독 로그인 확인. API 키 넣지 마세요.</p>
     <p class="lead"><b>토큰(claude setup-token)을 꼭 발급해야 하나요?</b> → <b>아니요, 안 하셔도 돼요!</b> Claude Code에 로그인만 되어 있으면 자동으로 인증돼요. 터미널에 <code>claude</code> 입력 → 한 번 로그인하면 끝. <code>.env</code>에 토큰 넣는 부분은 건너뛰세요. (토큰은 서버 등 특수한 경우에만 쓰는 예비용이에요.)</p>
-    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
+    <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 먼저 2번 ④ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
     <p class="lead"><b>AI가 로그인에서 멈춰요</b> → Aside 브라우저에서 그 사이트에 직접 한 번 로그인하세요. 네이버는 “로그인 상태 유지”를 체크해요.</p>
     <p class="lead"><b>글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
     <p class="lead"><b>카드뉴스 이미지를 못 만들어요</b> → 1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “node -v 확인해줘”라고 하면 돼요.</p>
