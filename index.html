@@ -174,7 +174,7 @@ body:not(.locked) .themetoggle{display:none}
     <h2>이렇게 진행해요</h2>
     <p class="lead"><b>Claude Code</b>가 글쓰기부터 올리기까지 다 해요. 화면을 누르는 일만 <b>Aside 브라우저</b>가 맡아요. 아래 순서대로 따라 하세요.</p>
     <ol class="steps">
-      <li><a href="#setup">기본 세팅</a>: Claude Code 열기, git·Node.js는 Claude가 설치</li>
+      <li><a href="#setup">기본 세팅</a>: Claude Code 열기, git 설치, Node.js는 Claude가 설치</li>
       <li><a href="#aside">Aside 설치하고 로그인하기 (CLI 설치까지)</a></li>
       <li><a href="#pack">원장 스킬 팩 받기</a></li>
       <li><a href="#link">Claude Code와 Aside 이어 주기</a></li>
@@ -200,20 +200,25 @@ body:not(.locked) .themetoggle{display:none}
     <p class="lead" style="margin-top:10px">가입 후, Claude 앱(또는 claude.ai) <b>우측 상단의 <code>&lt;/&gt;</code> (코드) 아이콘을 클릭</b>하면 <b>Claude Code</b> 창이 열려요. 이 창이 앞으로 모든 작업의 무대예요.</p>
     <div class="note">💡 <code>&lt;/&gt;</code> 아이콘이 안 보이면 → Claude 데스크톱 앱을 최신으로 업데이트하거나 claude.ai 에 로그인해 보세요.</div>
     <div class="divider"></div>
-    <h3 style="font-size:17px;margin:0 0 4px">② git과 Node.js는 Claude에게 맡기기</h3>
-    <p class="lead" style="margin-bottom:8px">스킬을 받아오려면 <b>git</b>, 카드뉴스 이미지를 만들려면 <b>Node.js</b>가 필요해요. 1기 때 제일 어려워하신 부분인데, 이번엔 <b>직접 내려받지 않아요.</b> Claude Code를 열고 아래 문장을 붙여넣으면 Claude가 확인하고 없는 것만 알아서 설치해요.</p>
-    <button class="big-copy" id="toolsBox"><span class="lbl">전체 복사</span><pre id="toolsText">내 컴퓨터에 git과 Node.js(LTS)가 설치돼 있는지 확인하고, 없으면 네가 알아서 설치해줘.
+    <h3 style="font-size:17px;margin:0 0 4px">② 깃허브(git) 설치</h3>
+    <p class="lead" style="margin-bottom:6px">스킬을 받아오려면 <b>git</b>이 필요해요. 이건 사이트에서 직접 받아요.</p>
+    <p class="lead mac" style="margin:0 0 6px">🍎 <b>맥</b>: Claude가 git을 처음 쓸 때 <b>'명령어 도구 설치' 팝업</b>이 자동으로 떠요 → <b>"설치"</b>만 누르면 끝! (안 뜨면 아래 버튼으로)</p>
+    <p class="lead win" style="margin:0 0 6px">🪟 <b>윈도우</b>: 아래 버튼 → <b>Windows</b> → <b>64-bit Git for Windows Setup</b>을 받아요. 설치 파일을 열고 <b>Next</b>만 계속 누르면 돼요. (ARM64 말고 64-bit예요)</p>
+    <div class="btnrow"><a class="btn ghost" href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 설치 페이지 ↗</a></div>
+    <div class="divider"></div>
+    <h3 style="font-size:17px;margin:0 0 4px">③ Node.js는 Claude에게 맡기기</h3>
+    <p class="lead" style="margin-bottom:8px">카드뉴스 이미지를 만들려면 <b>Node.js</b>가 필요해요. 1기 때 제일 어려워하신 부분인데, 이번엔 <b>직접 내려받지 않아요.</b> Claude Code를 열고 아래 문장을 붙여넣으면 Claude가 확인하고 알아서 설치해요.</p>
+    <button class="big-copy" id="toolsBox"><span class="lbl">전체 복사</span><pre id="toolsText">내 컴퓨터에 Node.js(LTS)가 설치돼 있는지 확인하고, 없으면 네가 알아서 설치해줘.
 나는 코딩을 전혀 모르니까 설치 파일 받기, 실행, 확인까지 전부 네가 해줘.
-중간에 허용이나 비밀번호 창이 뜨면 나한테 "지금 허용 눌러주세요"라고 말해줘.
-다 끝나면 "git 설치됨, Node.js 설치됨"이라고 한 줄로 알려줘.</pre></button>
+중간에 허용 창이 뜨면 나한테 "지금 허용 눌러주세요"라고 말해줘.
+다 끝나면 "Node.js 설치됨"이라고 한 줄로 알려줘.</pre></button>
     <ul class="check" style="margin-top:12px">
       <li>중간에 <b>“허용할까요?”</b> 창이 뜨면 <b>항상 허용</b>을 눌러요.</li>
-      <li class="mac">🍎 맥: <b>'명령어 도구 설치'</b> 팝업이 뜨면 <b>"설치"</b>를 눌러요. 맥 비밀번호를 묻는 창이 뜨면 원장님이 직접 입력해요.</li>
       <li class="win">🪟 윈도우: <b>“이 앱이 디바이스를 변경하도록 허용하시겠어요?”</b> 창이 뜨면 <b>예</b>를 눌러요.</li>
       <li>오래된 노트북은 10분 넘게 걸릴 수 있어요. Claude가 “설치됨”이라고 할 때까지 기다리면 돼요.</li>
     </ul>
-    <div class="note">💡 Claude가 “설치됐어요”라고 하면 끝이에요. 직접 설치 페이지에 들어갈 일은 없어요. 혹시 Claude가 못 하겠다고 하면 그때만 아래 버튼으로 받아서 <b>다음</b>만 계속 누르세요.</div>
-    <div class="btnrow"><a class="btn ghost" href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 설치 페이지 ↗</a><a class="btn ghost" href="https://nodejs.org/ko/download" target="_blank" rel="noopener">Node.js 다운로드 ↗</a></div>
+    <div class="note">💡 Claude가 “Node.js 설치됨”이라고 하면 끝이에요. 혹시 Claude가 못 하겠다고 하면 그때만 아래 버튼으로 받아서 <b>다음</b>만 계속 누르세요.</div>
+    <div class="btnrow"><a class="btn ghost" href="https://nodejs.org/ko/download" target="_blank" rel="noopener">Node.js 다운로드 ↗</a></div>
   </section>
 
   <!-- ===== EASY: ASIDE ===== -->
@@ -459,7 +464,7 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
       <div class="q"><b>검은 창(터미널)이 갑자기 떴어요. 켜 놔야 하나요?</b>아니요, X로 닫아도 돼요. 이 가이드에서는 터미널을 쓰지 않아요. 전부 Claude Code에 말로 하면 돼요.</div>
       <div class="q"><b>설치가 너무 오래 걸려요 / 멈춘 것 같아요.</b>오래된 노트북은 10분 넘게 걸리기도 해요. 진행바가 움직이면 기다리고, 완전히 멈춘 것 같으면 화면을 캡처해서 Claude Code에 붙여넣고 물어보세요.</div>
       <div class="q"><b>휴대폰으로 해도 되나요?</b>설치와 세팅은 꼭 <b>노트북·PC</b>에서 해야 해요. 휴대폰은 텔레그램 확인용으로만 써요.</div>
-      <div class="q"><b>카드뉴스 이미지를 못 만들어요.</b>Node.js가 없어서 그래요. 1번 ②의 문장을 다시 붙여넣으면 Claude가 확인하고 설치해요.</div>
+      <div class="q"><b>카드뉴스 이미지를 못 만들어요.</b>Node.js가 없어서 그래요. 1번 ③의 문장을 다시 붙여넣으면 Claude가 확인하고 설치해요.</div>
     </div>
 
     <div class="faqpane" data-faq="mode">
