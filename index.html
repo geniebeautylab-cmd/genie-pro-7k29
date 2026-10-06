@@ -271,7 +271,8 @@ body:not(.locked) .themetoggle{display:none}
     <h2><span class="stepnum ok">4</span> Claude Code와 Aside 이어 주기</h2>
     <p class="lead">2번 ③에서 깐 CLI를 Claude Code가 실제로 쓰도록 이어 주는 단계예요. 아래 문장을 <b>Claude Code</b>에 붙여넣으세요.</p>
     <button class="big-copy" id="linkBox"><span class="lbl">전체 복사</span><pre id="linkText">Aside 브라우저를 네가 쓸 수 있게 연결해줘. (Aside CLI는 이미 설치했어. 필요한 설치나 설정은 네가 알아서 해줘.)
-앞으로 브라우저가 필요한 일은 크롬 확장 말고 Aside로 해줘.</pre></button>
+앞으로 브라우저가 필요한 일은 크롬 확장 말고 Aside로 해줘.
+Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실행해서, 네가 쓴 원고와 사진 파일을 Aside가 바로 읽을 수 있게 해줘. 사진 파일은 필요하면 Aside 세션 폴더로 복사해서 써.</pre></button>
     <p class="lead" style="margin-top:12px">중간에 “설치해도 될까요?”, “실행해도 될까요?” 하고 물으면 <b>허용</b>을 눌러요. 한 번만 하면 돼요. 원장님이 직접 칠 명령어는 없어요.</p>
   </section>
 
@@ -384,6 +385,7 @@ body:not(.locked) .themetoggle{display:none}
     <p class="lead"><b>AI가 글을 안 써요</b> → Claude 앱에 Pro 계정으로 로그인돼 있는지 확인하세요. API 키는 넣지 마세요.</p>
     <p class="lead"><b>토큰이나 API 키를 발급해야 하나요?</b> → <b>아니요.</b> Claude 앱에 로그인만 되어 있으면 자동으로 돼요. 토큰·키 이야기가 나오면 전부 건너뛰세요.</p>
     <p class="lead"><b>Claude Code가 Aside를 못 찾아요</b> → 먼저 2번 ③ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 “Claude Code와 Aside 이어 주기” 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있는지도 확인해요.</p>
+    <p class="lead"><b>Aside가 "원고 파일을 읽을 수 없어요"라고 해요</b> → Claude Code에 “Aside를 전체 접근 권한으로 다시 실행해줘”라고 말하세요. 4번 연결 문장을 다시 붙여넣어도 돼요.</p>
     <p class="lead"><b>AI가 로그인에서 멈춰요</b> → Aside 브라우저에서 그 사이트에 직접 한 번 로그인하세요. 네이버는 “로그인 상태 유지”를 체크해요.</p>
     <p class="lead"><b>글자 크기나 줄바꿈이 이상해요</b> → 진행 중에 바로 “본문 전체 15pt로 맞춰줘”, “한 문장 한 줄로 다시 나눠줘”라고 말하면 고쳐줘요.</p>
     <p class="lead"><b>카드뉴스 이미지를 못 만들어요</b> → 1번의 Node.js가 설치됐는지 확인하세요. Claude Code에 “Node.js가 설치돼 있는지 확인해줘”라고 하면 돼요.</p>
