@@ -509,6 +509,7 @@ Aside에 일을 맡길 때는 항상 전체 접근 권한(full-access)으로 실
     </div>
 
     <div class="faqpane" data-faq="aside">
+      <div class="q"><b>"네이버 전체가 안전 제한으로 막혀 있어요 / 스킬이 이 세션에 없어요"라고 해요.</b>Aside가 아니라 <b>Claude 자체 내장 브라우저</b>를 쓰고 있어서 그래요(내장 브라우저는 네이버를 막아요). 3번 스킬 팩이나 4번 Aside 연결이 빠진 거예요. ① 설정 → Developers에서 Aside CLI 설치 확인 → ② <b>새 대화</b>를 열어 3번 문장 → 4번 문장 → ③ 다시 <b>새 대화</b>를 열고 "내장 브라우저 쓰지 말고 네이버·인스타 조작은 전부 Aside로 해. aside cli와 naver-blog-writing 스킬이 있는지 먼저 확인해줘"라고 한 뒤 5번을 이어서 넣어요.</div>
       <div class="q"><b>"Aside가 네이버 글쓰기 화면을 막고 있어요, 크롬 확장을 쓸까요?"라고 해요.</b>Aside가 막은 게 아니라 <b>Claude Code 쪽 허용 설정</b>이 꺼져 있어서 그래요. 크롬 확장 설치 창은 <b>"나중에"</b>를 누르고, ① 설정 → Claude Code → <b>권한우회 모드</b>를 전부 켠 뒤 ② Claude Code에 "크롬 확장 쓰지 말고, 4번 문장대로 Aside를 전체 접근 권한으로 다시 실행해서 네이버 글쓰기 화면을 열어줘. 막히면 그 메시지를 그대로 보여줘"라고 하세요. ③ Aside 창에 네이버가 로그인돼 있는지도 확인해요.</div>
       <div class="q"><b>Claude Code가 Aside를 못 찾아요.</b>2번 ③ <b>Aside CLI</b>가 설치됐는지(설정 → Developers에 “Reinstall”이 보이는지) 확인하고, 4번 연결 문장을 다시 붙여넣으세요. Aside 브라우저가 켜져 있어야 해요.</div>
       <div class="q"><b>Aside가 “원고 파일을 읽을 수 없어요”라고 해요.</b>Claude Code에 “Aside를 전체 접근 권한으로 다시 실행해줘”라고 말하세요.</div>
